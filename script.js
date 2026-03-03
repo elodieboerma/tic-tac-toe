@@ -3,8 +3,6 @@
 // each little piece of functionality should be able to fit inside the gameboard, player, or game object
     // plan where each piece should go logically before beginning to code
 /* "build the house from the inside out" :
-    1) foundation - skeleton/basics/outline
-    2) walls between rooms - most important unique code for each section
     3) doors - interaction between the parts
     4) roof - make sure the logic is secure/works by playing it in the devtools console
         --don't worry about user input rn - call functions and pass arguments to them in the console instead
@@ -26,7 +24,6 @@
     3) 3 in a row diagonally starting from the top left or top right corner */
 
 
-//1) foundation - skeleton/basics/outline
 let gameboard = [
     "","","",
     "","","",
@@ -42,13 +39,17 @@ let game = (function () {
     let player2 = new Player("O");
     let whoseTurn = player1;
     //event listener to add marker to specific spot in gameboard[] array
+    function addMarker(square) {
+        let spot = square - 1;
         let marker = whoseTurn.marker;
-        //replace spot in gameboard[] array with the marker;
+        gameboard[spot] = marker;
         if (whoseTurn == player1) {
             whoseTurn = player2;
         }else{
             whoseTurn = player1;
         }
+    }
+    return addMarker();
 })
 
-//2) walls between rooms - most important unique code for each section
+// 3) doors - interaction between the parts
