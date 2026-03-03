@@ -31,13 +31,18 @@ let gameboard = [
 ]; // stores gameboard - "x"s and "o"s
 // player objects - store players in their own objects - factory function
 let Player = function (symbol) {
-    let marker = symbol;
-    return marker;
+    /*let marker = symbol;
+    return marker; */ //understand why this won't work
+    return {
+        marker: symbol,
+    }
 }
+
+let player1 = new Player("X");
+let player2 = new Player("O");
+
 // game object - store flow of the game itself - iife (?)
 let game = (function () {
-    let player1 = new Player("X");
-    let player2 = new Player("O");
     let whoseTurn = player1;
     // add marker to specific spot in gameboard[] array
     return function addMarker(square) {
