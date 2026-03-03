@@ -31,25 +31,25 @@ let gameboard = [
 ]; // stores gameboard - "x"s and "o"s
 // player objects - store players in their own objects - factory function
 let Player = function (symbol) {
-    marker = symbol;
+    let marker = symbol;
+    return marker;
 }
 // game object - store flow of the game itself - iife (?)
 let game = (function () {
     let player1 = new Player("X");
     let player2 = new Player("O");
     let whoseTurn = player1;
-    //event listener to add marker to specific spot in gameboard[] array
-    function addMarker(square) {
+    // add marker to specific spot in gameboard[] array
+    return function addMarker(square) {
         let spot = square - 1;
         let marker = whoseTurn.marker;
         gameboard[spot] = marker;
         if (whoseTurn == player1) {
-            whoseTurn = player2;
+            return whoseTurn = player2;
         }else{
-            whoseTurn = player1;
+            return whoseTurn = player1;
         }
     }
-    return addMarker();
-})
+})()
 
 // 3) doors - interaction between the parts
