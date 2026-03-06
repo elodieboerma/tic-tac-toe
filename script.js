@@ -3,9 +3,6 @@
 // each little piece of functionality should be able to fit inside the gameboard, player, or game object
     // plan where each piece should go logically before beginning to code
 /* "build the house from the inside out" :
-    3) doors - interaction between the parts
-    4) roof - make sure the logic is secure/works by playing it in the devtools console
-        --don't worry about user input rn - call functions and pass arguments to them in the console instead
     5) furniture - most basic visuals
         --make object to handle DOM/display
         --write a function to render the contents of the gameboard array to the webpage
@@ -29,10 +26,9 @@ let gameboard = [
     "","","",
     "","","",
 ]; // stores gameboard - "x"s and "o"s
-// player objects - store players in their own objects - factory function
+// player object constructor - store players in their own objects
 let Player = function (symbol) {
-    /*let marker = symbol;
-    return marker; */ //understand why this won't work
+    // have to return the marker as an object (not just the value) so the rest of the script can use it
     return {
         marker: symbol,
     }
@@ -41,10 +37,10 @@ let Player = function (symbol) {
 let player1 = new Player("X");
 let player2 = new Player("O");
 
-// game object - store flow of the game itself - iife (?)
+// game object - store flow of the game itself
 let game = (function () {
     let whoseTurn = player1;
-    // add marker to specific spot in gameboard[] array
+    // adds marker to specific spot in gameboard[] array
     return function addMarker(square) {
         let spot = square - 1;
         let marker = whoseTurn.marker;
@@ -57,4 +53,10 @@ let game = (function () {
     }
 })()
 
-// 3) doors - interaction between the parts
+/* 5) furniture - most basic visuals
+        --make object to handle DOM/display
+        --write a function to render the contents of the gameboard array to the webpage
+            --can just fill the array in with "x"s and "o"s for now to see how it looks
+        --write the functions that allow players to add marks to a specific spot on the board by clicking on
+        the appropriate DOM element
+            --don't forget the logic that prevents players from playing in spots that are already taken */
