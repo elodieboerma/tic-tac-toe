@@ -60,3 +60,25 @@ let game = (function () {
         --write the functions that allow players to add marks to a specific spot on the board by clicking on
         the appropriate DOM element
             --don't forget the logic that prevents players from playing in spots that are already taken */
+
+// object to handle DOM/display
+let domDisplay = (function () {
+    /*let square0 = document.getElementsByClassName("0");
+    square0.textContent = gameboard[0];
+    let square1 = document.getElementsByClassName("1");
+    square1.textContent = gameboard[1];
+    let square2 = document.getElementsByClassName("2");
+    square2.textContent = gameboard[2];
+    let square3 = document.getElementsByClassName("3");
+    square3.textContent = gameboard[3];
+    let square4 = document.getElementsByClassName("4");
+    square4.textContent = gameboard[4];
+    let square5 = document.getElementsByClassName("5");
+    square5.textContent = gameboard[5];
+    let square6 = document.getElementsByClassName("6");
+    square6.textContent = gameboard[6];
+    let square7 = document.getElementsByClassName("7");
+    square7.textContent = gameboard[7];
+    let square8 = document.getElementsByClassName("8");
+    square8.textContent = gameboard[8];*/
+})
