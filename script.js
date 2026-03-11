@@ -3,13 +3,6 @@
 // each little piece of functionality should be able to fit inside the gameboard, player, or game object
     // plan where each piece should go logically before beginning to code
 /* "build the house from the inside out" :
-    5) furniture - most basic visuals
-        --make object to handle DOM/display
-        --write a function to render the contents of the gameboard array to the webpage
-            --can just fill the array in with "x"s and "o"s for now to see how it looks
-        --write the functions that allow players to add marks to a specific spot on the board by clicking on
-        the appropriate DOM element
-            --don't forget the logic that prevents players from playing in spots that are already taken
     6) decor - little details to make it look or feel nicer
         --let players put in their names
         --include a button to start/restart the game
@@ -44,11 +37,15 @@ let game = (function () {
     return function addMarker(square) {
         let spot = square - 1;
         let marker = whoseTurn.marker;
-        gameboard[spot] = marker;
-        if (whoseTurn == player1) {
-            return whoseTurn = player2;
+        if (gameboard[spot] == "") {
+            gameboard[spot] = marker;
+            if (whoseTurn == player1) {
+                return whoseTurn = player2;
+            }else{
+                return whoseTurn = player1;
+            }
         }else{
-            return whoseTurn = player1;
+            console.log("Spot taken! Try again!");
         }
     }
 })()
