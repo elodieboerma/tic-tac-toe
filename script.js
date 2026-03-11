@@ -37,6 +37,7 @@ let game = (function () {
     return function addMarker(square) {
         let spot = square - 1;
         let marker = whoseTurn.marker;
+        // prevents playing spots that are already taken
         if (gameboard[spot] == "") {
             gameboard[spot] = marker;
             if (whoseTurn == player1) {
@@ -50,13 +51,37 @@ let game = (function () {
     }
 })()
 
+/* winning possibilities */
+let letter;
+let winner;
+if (/*horizontal #1*/ (gameboard[0] == gameboard[1] && gameboard[1] == gameboard[2]) ||
+    /*vertical #1*/ (gameboard[0] == gameboard[3] && gameboard[3] == gameboard[6]) ||
+    /*diagonal #1*/ (gameboard[0] == gameboard[4] && gameboard[4] == gameboard[8]) ){
+        letter = gameboard[0];
+}else if (/*horizontal #2 */ (gameboard[3] == gameboard[4] && gameboard[4] == gameboard[5]) ||
+    /*vertical #2*/ (gameboard[1] == gameboard[4] && gameboard[4] == gameboard[7]) ||
+    /*diagonal #2*/ (gameboard[2] == gameboard[4] && gameboard[4] == gameboard[6]) ){
+        letter = gameboard[4];
+}else if (/*horizontal #3*/ (gameboard[6] == gameboard[7] && gameboard[7] == gameboard[8]) ||
+    /*vertical #3*/ (gameboard[2] == gameboard[5] && gameboard[5] == gameboard[8]) ){
+        letter = gameboard[8];
+}else{
+    /*letter = "";*/
+    console.log("Tie!");
+}
+if (player1.marker == letter) {
+    winner = player1;
+}else{
+    winner = player2;
+}
+console.log(`Game over! ${winner} won!`);
+
 /* 5) furniture - most basic visuals
         --make object to handle DOM/display
         --write a function to render the contents of the gameboard array to the webpage
             --can just fill the array in with "x"s and "o"s for now to see how it looks
         --write the functions that allow players to add marks to a specific spot on the board by clicking on
-        the appropriate DOM element
-            --don't forget the logic that prevents players from playing in spots that are already taken */
+        the appropriate DOM element */
 
 // object to handle DOM/display
 let domDisplay = (function () {
