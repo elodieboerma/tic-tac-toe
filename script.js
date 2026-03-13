@@ -1,7 +1,6 @@
 // as little global code as possible - use function factories as much as possible
     // wrap the factory inside an IIFE if only one instance of the function is needed so it can't be reused
 // each little piece of functionality should be able to fit inside the gameboard, player, or game object
-    // plan where each piece should go logically before beginning to code
 /* "build the house from the inside out" :
     6) decor - little details to make it look or feel nicer
         --let players put in their names
@@ -14,6 +13,8 @@ let gameboard = [
     "","","",
     "","","",
 ]; // stores gameboard - "x"s and "o"s
+
+
 // player object constructor - store players in their own objects
 let Player = function (symbol) {
     // have to return the marker as an object (not just the value) so the rest of the script can use it
@@ -22,11 +23,11 @@ let Player = function (symbol) {
     }
 }
 
-let player1 = new Player("X");
-let player2 = new Player("O");
 
 // game object - store flow of the game itself
 let game = (function () {
+    let player1 = new Player("X");
+    let player2 = new Player("O");
     let whoseTurn = player1;
     // adds marker to specific spot in gameboard[] array
     return function addMarker(square) {
