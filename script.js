@@ -8,11 +8,6 @@
         --include a button to start/restart the game
         --add a display element that shows the results when the game ends */
 
-/* don't forget logic that checks for when the game is over: 
-    1) 3 in a row across top, middle, or bottom
-    2) 3 in a row vertically left, middle, or right
-    3) 3 in a row diagonally starting from the top left or top right corner */
-
 
 let gameboard = [
     "","","",
@@ -40,7 +35,7 @@ let game = (function () {
         // prevents playing spots that are already taken and declares tie/winner when applicable
         if (gameboard[spot] == "") {
             gameboard[spot] = marker;
-           checkForWinner();
+            checkForWinner();
             if (whoseTurn == player1) {
                 return whoseTurn = player2;
             }else{
@@ -50,39 +45,40 @@ let game = (function () {
             console.log("Spot taken! Try again!");
         }
     }
-})()
 
-function checkForWinner() {
-    /* winning possibilities */
-    let letter;
-    let winner;
-    if (/*horizontal #1*/ (gameboard[0] == gameboard[1] && gameboard[1] == gameboard[2] && gameboard[0] != "") ||
-        /*vertical #1*/ (gameboard[0] == gameboard[3] && gameboard[3] == gameboard[6] && gameboard[0] != "") ||
-        /*diagonal #1*/ (gameboard[0] == gameboard[4] && gameboard[4] == gameboard[8] && gameboard[0] != "") ){
-            letter = gameboard[0];
-    }else if (/*horizontal #2 */ (gameboard[3] == gameboard[4] && gameboard[4] == gameboard[5] && gameboard[3] != "") ||
-        /*vertical #2*/ (gameboard[1] == gameboard[4] && gameboard[4] == gameboard[7] && gameboard[1] != "") ||
-        /*diagonal #2*/ (gameboard[2] == gameboard[4] && gameboard[4] == gameboard[6] && gameboard[2] != "") ){
-            letter = gameboard[4];
-    }else if (/*horizontal #3*/ (gameboard[6] == gameboard[7] && gameboard[7] == gameboard[8] && gameboard[6] != "") ||
-        /*vertical #3*/ (gameboard[2] == gameboard[5] && gameboard[5] == gameboard[8] && gameboard[2] != "") ){
-            letter = gameboard[8];
-    }else{
-        letter = "";
-        if (gameboard[0] != "" && gameboard[1] != "" && gameboard[2] != "" &&
+    function checkForWinner() {
+        /* winning possibilities */
+        let letter;
+        let winner;
+        if (/*horizontal #1*/ (gameboard[0] == gameboard[1] && gameboard[1] == gameboard[2] && gameboard[0] != "") ||
+            /*vertical #1*/ (gameboard[0] == gameboard[3] && gameboard[3] == gameboard[6] && gameboard[0] != "") ||
+            /*diagonal #1*/ (gameboard[0] == gameboard[4] && gameboard[4] == gameboard[8] && gameboard[0] != "") ){
+                letter = gameboard[0];
+        }else if (/*horizontal #2 */ (gameboard[3] == gameboard[4] && gameboard[4] == gameboard[5] && gameboard[3] != "") ||
+            /*vertical #2*/ (gameboard[1] == gameboard[4] && gameboard[4] == gameboard[7] && gameboard[1] != "") ||
+            /*diagonal #2*/ (gameboard[2] == gameboard[4] && gameboard[4] == gameboard[6] && gameboard[2] != "") ){
+                letter = gameboard[4];
+        }else if (/*horizontal #3*/ (gameboard[6] == gameboard[7] && gameboard[7] == gameboard[8] && gameboard[6] != "") ||
+            /*vertical #3*/ (gameboard[2] == gameboard[5] && gameboard[5] == gameboard[8] && gameboard[2] != "") ){
+                letter = gameboard[8];
+        }else{
+            letter = "";
+            if (gameboard[0] != "" && gameboard[1] != "" && gameboard[2] != "" &&
                 gameboard[3] != "" && gameboard[4] != "" && gameboard[5] != "" &&
                 gameboard[6] != "" && gameboard[7] != "" && gameboard[8] != "" ){
                     console.log("Tie!");
+            }
+        }
+        if (player1.marker == letter) {
+            winner = "Player 1";
+            console.log(`Game over! ${winner} won!`);
+        }else if (player2.marker == letter) {
+            winner = "Player 2";
+            console.log(`Game over! ${winner} won!`);
         }
     }
-    if (player1.marker == letter) {
-        winner = "Player 1";
-        console.log(`Game over! ${winner} won!`);
-    }else if (player2.marker == letter) {
-        winner = "Player 2";
-        console.log(`Game over! ${winner} won!`);
-    }
-}
+})()
+
 
 /* 5) furniture - most basic visuals
         --make object to handle DOM/display
@@ -92,7 +88,7 @@ function checkForWinner() {
         the appropriate DOM element */
 
 // object to handle DOM/display
-let domDisplay = (function () {
+//let domDisplay = (function () {
     /*let square0 = document.getElementsByClassName("0");
     square0.textContent = gameboard[0];
     let square1 = document.getElementsByClassName("1");
@@ -111,4 +107,4 @@ let domDisplay = (function () {
     square7.textContent = gameboard[7];
     let square8 = document.getElementsByClassName("8");
     square8.textContent = gameboard[8];*/
-})
+//}) ()
