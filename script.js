@@ -10,9 +10,9 @@
 
 
 let gameboard = [
-    "","","",
-    "","","",
-    "","","",
+    "x","o","x",
+    "o","x","o",
+    "x","o","x",
 ]; // stores gameboard - "x"s and "o"s
 // player object constructor - store players in their own objects
 let Player = function (symbol) {
@@ -87,7 +87,6 @@ let game = (function () {
 
 
 /* 5) furniture - most basic visuals
-        --make object to handle DOM/display
         --write a function to render the contents of the gameboard array to the webpage
             --can just fill the array in with "x"s and "o"s for now to see how it looks
         --write the functions that allow players to add marks to a specific spot on the board by clicking on
