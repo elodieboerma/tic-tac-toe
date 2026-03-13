@@ -56,16 +56,16 @@ function checkForWinner() {
     /* winning possibilities */
     let letter;
     let winner;
-    if (/*horizontal #1*/ (gameboard[0] == gameboard[1] && gameboard[1] == gameboard[2]) ||
-        /*vertical #1*/ (gameboard[0] == gameboard[3] && gameboard[3] == gameboard[6]) ||
-        /*diagonal #1*/ (gameboard[0] == gameboard[4] && gameboard[4] == gameboard[8]) ){
+    if (/*horizontal #1*/ (gameboard[0] == gameboard[1] && gameboard[1] == gameboard[2] && gameboard[0] != "") ||
+        /*vertical #1*/ (gameboard[0] == gameboard[3] && gameboard[3] == gameboard[6] && gameboard[0] != "") ||
+        /*diagonal #1*/ (gameboard[0] == gameboard[4] && gameboard[4] == gameboard[8] && gameboard[0] != "") ){
             letter = gameboard[0];
-    }else if (/*horizontal #2 */ (gameboard[3] == gameboard[4] && gameboard[4] == gameboard[5]) ||
-        /*vertical #2*/ (gameboard[1] == gameboard[4] && gameboard[4] == gameboard[7]) ||
-        /*diagonal #2*/ (gameboard[2] == gameboard[4] && gameboard[4] == gameboard[6]) ){
+    }else if (/*horizontal #2 */ (gameboard[3] == gameboard[4] && gameboard[4] == gameboard[5] && gameboard[3] != "") ||
+        /*vertical #2*/ (gameboard[1] == gameboard[4] && gameboard[4] == gameboard[7] && gameboard[1] != "") ||
+        /*diagonal #2*/ (gameboard[2] == gameboard[4] && gameboard[4] == gameboard[6] && gameboard[2] != "") ){
             letter = gameboard[4];
-    }else if (/*horizontal #3*/ (gameboard[6] == gameboard[7] && gameboard[7] == gameboard[8]) ||
-        /*vertical #3*/ (gameboard[2] == gameboard[5] && gameboard[5] == gameboard[8]) ){
+    }else if (/*horizontal #3*/ (gameboard[6] == gameboard[7] && gameboard[7] == gameboard[8] && gameboard[6] != "") ||
+        /*vertical #3*/ (gameboard[2] == gameboard[5] && gameboard[5] == gameboard[8] && gameboard[2] != "") ){
             letter = gameboard[8];
     }else{
         letter = "";
