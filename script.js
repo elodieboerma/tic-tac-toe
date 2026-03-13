@@ -29,9 +29,10 @@ let game = (function () {
     let player1 = new Player("X");
     let player2 = new Player("O");
     let whoseTurn = player1;
+    let spot;
     // adds marker to specific spot in gameboard[] array
     return function addMarker(square) {
-        let spot = square - 1;
+        spot = square - 1;
         let marker = whoseTurn.marker;
         if (marker == "x") {
             marker.classList.add("x");
@@ -54,6 +55,7 @@ let game = (function () {
             console.log("Spot taken! Try again!");
         }
     }
+
 
     function checkForWinner() {
         /* winning possibilities */
@@ -87,34 +89,13 @@ let game = (function () {
             console.log(`Game over! ${winner} won!`);
         }
     }
-})()
 
-
-/* 5) furniture - most basic visuals
-        --make an object to handle DOM/display
-        --write a function to render the contents of the gameboard array to the webpage
-            --can just fill the array in with "x"s and "o"s for now to see how it looks
+    /* 5) furniture - most basic visuals
         --write the functions that allow players to add marks to a specific spot on the board by clicking on
         the appropriate DOM element */
-
-// object to handle DOM/display
-/*let domDisplay = (function () {
-    let square0 = document.getElementById("0");
-    square0.textContent = gameboard[0];
-    let square1 = document.getElementById("1");
-    square1.textContent = gameboard[1];
-    let square2 = document.getElementById("2");
-    square2.textContent = gameboard[2];
-    let square3 = document.getElementById("3");
-    square3.textContent = gameboard[3];
-    let square4 = document.getElementById("4");
-    square4.textContent = gameboard[4];
-    let square5 = document.getElementById("5");
-    square5.textContent = gameboard[5];
-    let square6 = document.getElementById("6");
-    square6.textContent = gameboard[6];
-    let square7 = document.getElementById("7");
-    square7.textContent = gameboard[7];
-    let square8 = document.getElementById("8");
-    square8.textContent = gameboard[8];
-}) ()*/
+    function displayDOM() {
+        spot.addEventListener("click", function() {
+            addMarker(spot);
+        })
+    }
+})()
