@@ -72,10 +72,10 @@ function checkForWinner() {
         console.log("Tie!");
     }
     if (player1.marker == letter) {
-        winner = player1;
+        winner = "Player 1";
         console.log(`Game over! ${winner} won!`);
     }else if (player2.marker == letter) {
-        winner = player2;
+        winner = "Player 2";
         console.log(`Game over! ${winner} won!`);
     }
 }
