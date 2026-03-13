@@ -32,6 +32,11 @@ let game = (function () {
     return function addMarker(square) {
         let spot = square - 1;
         let marker = whoseTurn.marker;
+        if (marker == "x") {
+            marker.classList.add("x");
+        }else if (marker == "o") {
+            marker.classList.add("o");
+        }
         // prevents playing spots that are already taken and declares tie/winner when applicable
         if (gameboard[spot] == "") {
             gameboard[spot] = marker;
