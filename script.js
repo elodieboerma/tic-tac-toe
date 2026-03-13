@@ -35,11 +35,23 @@ let game = (function () {
     let whoseTurn = player1;
     // adds marker to specific spot in gameboard[] array
     return function addMarker(square) {
+        /*if (gameboard[0] != "" && gameboard[1] != "" && gameboard[2] != "" &&
+            gameboard[3] != "" && gameboard[4] != "" && gameboard[5] != "" &&
+            gameboard[6] != "" && gameboard[7] != "" && gameboard[8] != "" ){
+                checkForWinner();
+                return;
+            }*/
         let spot = square - 1;
         let marker = whoseTurn.marker;
         // prevents playing spots that are already taken
         if (gameboard[spot] == "") {
             gameboard[spot] = marker;
+            if (gameboard[0] != "" && gameboard[1] != "" && gameboard[2] != "" &&
+                gameboard[3] != "" && gameboard[4] != "" && gameboard[5] != "" &&
+                gameboard[6] != "" && gameboard[7] != "" && gameboard[8] != "" ){
+                    checkForWinner();
+                    return;
+            }
             if (whoseTurn == player1) {
                 return whoseTurn = player2;
             }else{
@@ -49,7 +61,6 @@ let game = (function () {
             console.log("Spot taken! Try again!");
         }
     }
-    //checkForWinner
 })()
 
 function checkForWinner() {
