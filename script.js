@@ -10,9 +10,9 @@
 
 
 let gameboard = [
-    "x","o","x",
-    "o","x","o",
-    "x","o","x",
+    "","","",
+    "","","",
+    "","","",
 ]; // stores gameboard - "x"s and "o"s
 // player object constructor - store players in their own objects
 let Player = function (symbol) {
@@ -40,6 +40,9 @@ let game = (function () {
         // prevents playing spots that are already taken and declares tie/winner when applicable
         if (gameboard[spot] == "") {
             gameboard[spot] = marker;
+            let boxText = document.getElementById(spot.toString());
+            boxText.textContent = marker;
+            boxText.classList.add(marker.toLowerCase());  // "X" -> "x", "O" -> "o"
             checkForWinner();
             if (whoseTurn == player1) {
                 return whoseTurn = player2;
@@ -87,13 +90,14 @@ let game = (function () {
 
 
 /* 5) furniture - most basic visuals
+        --make an object to handle DOM/display
         --write a function to render the contents of the gameboard array to the webpage
             --can just fill the array in with "x"s and "o"s for now to see how it looks
         --write the functions that allow players to add marks to a specific spot on the board by clicking on
         the appropriate DOM element */
 
 // object to handle DOM/display
-let domDisplay = (function () {
+/*let domDisplay = (function () {
     let square0 = document.getElementById("0");
     square0.textContent = gameboard[0];
     let square1 = document.getElementById("1");
@@ -112,4 +116,4 @@ let domDisplay = (function () {
     square7.textContent = gameboard[7];
     let square8 = document.getElementById("8");
     square8.textContent = gameboard[8];
-}) ()
+}) ()*/
