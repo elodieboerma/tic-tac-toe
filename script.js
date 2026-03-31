@@ -35,8 +35,18 @@ let gameFlow = (function () {
     --write the functions that allow players to add marks to a specific spot on the board by clicking on
     the appropriate DOM element */
 function displayDOM() {
-    spot.addEventListener("click", function() {
-        addMarker(spot);
+    let container = getElementById("container");
+    let square1 = getElementById("0");
+    let square2 = getElementById("1");
+    let square3 = getElementById("2");
+    let square4 = getElementById("3");
+    let square5 = getElementById("4");
+    let square6 = getElementById("5");
+    let square7 = getElementById("6");
+    let square8 = getElementById("7");
+    let square9 = getElementById("8");
+    container.addEventListener("click", function() {
+        addMarker(square);
     })
 }
 
