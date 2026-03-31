@@ -34,27 +34,34 @@ function displayDom() {
     let container = document.getElementById("container");
     container.addEventListener("click", function(e) {
         const square = e.target;
+        addMarker(square)
     })
 }
 
-function addMarker(square) {
-    spot = square - 1;
-    let marker = whoseTurn.marker;
-    if (marker == "x") {
+function addMarker(place) {
+    let spot = place - 1;
+    let whoseTurnIsIt = document.getElementById("whoseTurnDisplay");
+    let marker;// = whoseTurn.marker;
+    /*if (marker == "x") {
         marker.classList.add("x");
     }else if (marker == "o") {
         marker.classList.add("o");
-    }
+    }*/
     // prevents playing spots that are already taken and declares tie/winner when applicable
     if (gameboard[spot] == "") {
         gameboard[spot] = marker;
-        let boxText = document.getElementById(spot.toString());
+        let boxText = document.getElementById("box"+spot.toString());
         boxText.textContent = marker;
         boxText.classList.add(marker.toLowerCase());  // "X" -> "x", "O" -> "o"
         checkForWinner();
         if (whoseTurn == player1) {
+            whoseTurnIsIt.textContent = `${player2}'s turn (\"o\")`;
+            marker.classList.add("o");
             return whoseTurn = player2;
         }else{
+            whoseTurn = player1;
+            whoseTurnIsIt.textContent = `${player1}'s turn (\"x\")`;
+            marker.classList.add("x");
             return whoseTurn = player1;
         }
     }else{
