@@ -30,6 +30,13 @@ let player2 = new Player("O");
 //let game = (function () {
     // adds marker to specific spot in gameboard[] array
 
+function displayDom() {
+    let container = document.getElementById("container");
+    container.addEventListener("click", function(e) {
+        const square = e.target;
+    })
+}
+
 function addMarker(square) {
     spot = square - 1;
     let marker = whoseTurn.marker;
