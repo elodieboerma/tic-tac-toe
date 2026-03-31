@@ -39,8 +39,9 @@ function displayDom() {
 }
 
 function addMarker(place) {
-    let spot = place - 1;
+    //let spot = place - 1;
     let whoseTurnIsIt = document.getElementById("whoseTurnDisplay");
+    let whoseTurn;
     let marker;// = whoseTurn.marker;
     /*if (marker == "x") {
         marker.classList.add("x");
@@ -48,9 +49,16 @@ function addMarker(place) {
         marker.classList.add("o");
     }*/
     // prevents playing spots that are already taken and declares tie/winner when applicable
-    if (gameboard[spot] == "") {
-        gameboard[spot] = marker;
-        let boxText = document.getElementById("box"+spot.toString());
+    if (gameboard[place] == "") {
+        if (whoseTurn = player2) { 
+            marker = player2.marker;
+        }else{
+            whoseTurn = player1;
+            marker = player1.marker;
+        }
+        marker.toString();
+        gameboard[place] = marker;
+        let boxText = document.getElementById("box"+place.toString());
         boxText.textContent = marker;
         boxText.classList.add(marker.toLowerCase());  // "X" -> "x", "O" -> "o"
         checkForWinner();
@@ -59,7 +67,7 @@ function addMarker(place) {
             marker.classList.add("o");
             return whoseTurn = player2;
         }else{
-            whoseTurn = player1;
+            //whoseTurn = player1;
             whoseTurnIsIt.textContent = `${player1}'s turn (\"x\")`;
             marker.classList.add("x");
             return whoseTurn = player1;
