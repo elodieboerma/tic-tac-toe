@@ -62,18 +62,21 @@ function addMarker(place) {
         boxText.textContent = marker;
         boxText.classList.add(marker.toLowerCase());  // "X" -> "x", "O" -> "o"
         checkForWinner();
-        if (whoseTurn == player1) {
+        changeWhoseTurn(whoseTurn);
+    }else{
+        console.log("Spot taken! Try again!");
+    }
+}
+
+function changeWhoseTurn(whoseTurn) {
+    if (whoseTurn == player1) {
             whoseTurnIsIt.textContent = `${player2}'s turn (\"o\")`;
             marker.classList.add("o");
             return whoseTurn = player2;
-        }else{
-            //whoseTurn = player1;
-            whoseTurnIsIt.textContent = `${player1}'s turn (\"x\")`;
-            marker.classList.add("x");
-            return whoseTurn = player1;
-        }
     }else{
-        console.log("Spot taken! Try again!");
+        whoseTurnIsIt.textContent = `${player1}'s turn (\"x\")`;
+        marker.classList.add("x");
+        return whoseTurn = player1;
     }
 }
 
