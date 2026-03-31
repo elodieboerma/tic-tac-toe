@@ -11,9 +11,9 @@
 // game object - store flow of the game itself
 let gameFlow = (function () {
     let gameboard = [
-        "x","o","x",
-        "o","x","o",
-        "o","x","x",
+        "","","",
+        "","","",
+        "","","",
     ]; // stores gameboard - "x"s and "o"s
 
     // player object constructor - store players in their own objects
@@ -26,27 +26,20 @@ let gameFlow = (function () {
 
     let player1 = new Player("X");
     let player2 = new Player("O");
-    let whoseTurn = player1;
-    let spot;
+    //let whoseTurn = player1;
+    //let spot;
+    displayDOM(player1,player2,gameboard);
 })()
 
 
 /* 5) furniture - most basic visuals
     --write the functions that allow players to add marks to a specific spot on the board by clicking on
     the appropriate DOM element */
-function displayDOM() {
-    let container = getElementById("container");
-    let square1 = getElementById("0");
-    let square2 = getElementById("1");
-    let square3 = getElementById("2");
-    let square4 = getElementById("3");
-    let square5 = getElementById("4");
-    let square6 = getElementById("5");
-    let square7 = getElementById("6");
-    let square8 = getElementById("7");
-    let square9 = getElementById("8");
-    container.addEventListener("click", function() {
-        addMarker(square);
+function displayDOM(player1,player2,gameboard) {
+    let container = document.getElementById("container");
+    container.addEventListener("click", function(e) {
+        const square = e.clicked;
+        addMarker(square,player1,player2,gameboard);
     })
 }
 
@@ -86,8 +79,9 @@ function checkForWinner() {
 
 
 // adds marker to specific spot
-function addMarker(square) {
+function addMarker(square,player1,player2,gameboard) {
     spot = square - 1;
+    whoseTurn = player1;
     let marker = whoseTurn.marker;
     if (marker == "x") {
         marker.classList.add("x");
