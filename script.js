@@ -31,25 +31,51 @@ let game = (function () {
     let player1 = new Player("x",name);
     let player2 = new Player("o",name);
 
-    displayDom();
+    respondToDom();
 })
 
-function displayDom() {
-    //const box0 = document.createElement("div");
-    //box0.classList.add("box");
-    //box0.id = "box0";
-    //const container = document.getElementById("container");
-    //container.appendChild(box0);
-    const box0 = document.getElementById("box0");
-    const box1 = document.getElementById("box1");
-    const box2 = document.getElementById("box2");
-    const box3 = document.getElementById("box3");
-    const box4 = document.getElementById("box4");
-    const box5 = document.getElementById("box5");
-    const box6 = document.getElementById("box6");
-    const box7 = document.getElementById("box7");
-    const box8 = document.getElementById("box8");
+let gameGrid = (function makeGrid() {
+    const container = document.getElementById("container");
 
+    const box0 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box0";
+    container.appendChild(box0);
+    const box1 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box1";
+    container.appendChild(box1);
+    const box2 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box2";
+    container.appendChild(box2);
+    const box3 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box3";
+    container.appendChild(box3);
+    const box4 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box4";
+    container.appendChild(box4);
+    const box5 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box5";
+    container.appendChild(box5);
+    const box6 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box6";
+    container.appendChild(box6);
+    const box7 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box7";
+    container.appendChild(box7);
+    const box8 = document.createElement("div");
+    box0.classList.add("box");
+    box0.id = "box8";
+    container.appendChild(box8);
+})
+
+function respondToDom() {
     box0.addEventListener("click", function() {
         let square = box0.id.slice[3];
         consoloe.log(square);
