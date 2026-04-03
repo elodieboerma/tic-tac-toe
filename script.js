@@ -47,7 +47,7 @@ let game = (function () {
     // submit names
     const submitButton = document.createElement("button");
     submitButton.textContent = "OK";
-    submitButton.type = "button";
+    submitButton.type = "submit";
     form.append(submitButton);
 
     const whoseTurnDisplay = document.createElement("div");
