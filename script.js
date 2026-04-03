@@ -36,6 +36,7 @@ let game = (function () {
     const player1Name = document.createElement("input");
     player1Name.type = "text";
     player1Name.id = "name1";
+    player1Name.name = "name1";
     label1.append(player1Name);
     form.append(label1);
     // for player 2
@@ -45,6 +46,7 @@ let game = (function () {
     const player2Name = document.createElement("input");
     player2Name.type = "text";
     player2Name.id = "name2";
+    player2Name.name = "name2";
     label2.append(player2Name);
     form.append(label2);
     // submit names
