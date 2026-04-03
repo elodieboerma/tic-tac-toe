@@ -64,14 +64,14 @@ function addMarker(place) {
 }
 
 function changeWhoseTurn(whoseTurn) {
-    if (whoseTurn == player1) {
-            whoseTurnIsIt.textContent = `${player2}'s turn (\"o\")`;
+    if (whoseTurn == `${player1}'s turn`) {
+            whoseTurnIsIt.textContent = `${player2}'s turn`;
             marker.classList.add("o");
-            return whoseTurn = player2;
+            return whoseTurn = `${player2}'s turn`;
     }else{
-        whoseTurnIsIt.textContent = `${player1}'s turn (\"x\")`;
+        whoseTurnIsIt.textContent = `${player1}'s turn`;
         marker.classList.add("x");
-        return whoseTurn = player1;
+        return whoseTurn = `${player1}'s turn`;
     }
 }
 
