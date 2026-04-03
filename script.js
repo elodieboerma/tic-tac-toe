@@ -31,6 +31,7 @@ let game = (function () {
     // for player 1
     const label1 = document.createElement("label");
     label1.textContent = "Player 1's name (\"x\")";
+    label1.for = "name1";
     const player1Name = document.createElement("input");
     player1Name.type = "text";
     player1Name.id = "name1";
@@ -39,6 +40,7 @@ let game = (function () {
     // for player 2
     const label2 = document.createElement("label");
     label2.textContent = "Player 2's name (\"o\")";
+    label2.for = "name2";
     const player2Name = document.createElement("input");
     player2Name.type = "text";
     player2Name.id = "name2";
