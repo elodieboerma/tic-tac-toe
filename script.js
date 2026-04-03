@@ -99,11 +99,11 @@ function checkForWinner() {
                 console.log("Tie!");
         }
     }
-    if (player1.marker == letter) {
-        winner = "Player 1";
+    if (player1.marker.toString() == letter) {
+        winner = `${player1}`;
         console.log(`Game over! ${winner} won!`);
-    }else if (player2.marker == letter) {
-        winner = "Player 2";
+    }else if (player2.marker.toString() == letter) {
+        winner = `${player2}`;
         console.log(`Game over! ${winner} won!`);
     }
 }
