@@ -28,6 +28,7 @@ let Player = function (symbol,name) {
 let game = (function () {
     // takes player names
     const form = document.createElement("form");
+    form.action = "script.js";
     // for player 1
     const label1 = document.createElement("label");
     label1.textContent = "Player 1's name (\"x\")";
