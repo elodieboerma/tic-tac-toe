@@ -26,10 +26,12 @@ let Player = function (symbol,name) {
 
 // game object - store flow of the game itself
 let game = (function () {
-
+    const whoseTurnIsIt = document.getElementById("whoseTurnDisplay");
 
     let player1 = new Player("x",name);
     let player2 = new Player("o",name);
+
+    whoseTurnIsIt.textContent = `${player1.name.toString()}'s turn`;
 
     respondToDom();
 })
