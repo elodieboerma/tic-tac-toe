@@ -26,16 +26,39 @@ let Player = function (symbol,name) {
 
 // game object - store flow of the game itself
 let game = (function () {
-    
+    // takes player names
+    const form = document.createElement("form");
+    // for player 1
+    const label1 = document.createElement("label");
+    label1.textContent = "Player 1's name (\"x\")";
+    const player1Name = document.createElement("input");
+    player1Name.type = "text";
+    player1Name.id = "name1";
+    label1.append(player1Name);
+    form.append(label1);
+    // for player 2
+    const label2 = document.createElement("label");
+    label2.textContent = "Player 2's name (\"o\")";
+    const player2Name = document.createElement("input");
+    player2Name.type = "text";
+    player2Name.id = "name2";
+    label2.append(player2Name);
+    form.append(label2);
+    // submit and assign inputs to "name" variables for player objects
+    const submitButton = document.createElement("button");
+    submitButton.textContent = "OK";
+    submitButton.type = "button";
+    form.append(submitButton);
 
-    let player1 = new Player("x",name);
-    let player2 = new Player("o",name);
+    let player1 = new Player("x",name1);
+    let player2 = new Player("o",name2);
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
     whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
     document.append(whoseTurnDisplay);
 
+    //gameGrid();
     respondToDom();
 })
 
