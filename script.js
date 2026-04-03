@@ -38,6 +38,7 @@ let game = (function () {
     player1Name.id = "name1";
     player1Name.name = "name1";
     player1Name.placeholder = "Player 1";
+    player1Name.required = true;
     label1.append(player1Name);
     form.append(label1);
     // for player 2
@@ -49,6 +50,7 @@ let game = (function () {
     player2Name.id = "name2";
     player2Name.name = "name2";
     player2Name.placeholder = "Player 2";
+    player2Name.required = true;
     label2.append(player2Name);
     form.append(label2);
     // submit names
