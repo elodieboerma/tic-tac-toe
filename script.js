@@ -26,18 +26,23 @@ let Player = function (symbol,name) {
 
 // game object - store flow of the game itself
 let game = (function () {
-    const whoseTurnIsIt = document.getElementById("whoseTurnDisplay");
+    
 
     let player1 = new Player("x",name);
     let player2 = new Player("o",name);
 
-    whoseTurnIsIt.textContent = `${player1.name.toString()}'s turn`;
+    const whoseTurnDisplay = document.createElement("div");
+    whoseTurnDisplay.id = ("whoseTurnDisplay");
+    whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
+    document.append(whoseTurnDisplay);
 
     respondToDom();
 })
 
 let gameGrid = (function makeGrid() {
-    const container = document.getElementById("container");
+    const container = document.createElement("div");
+    container.id = "container";
+    document.append(container);
 
     const box0 = document.createElement("div");
     box0.classList.add("box");
