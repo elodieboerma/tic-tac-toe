@@ -71,6 +71,7 @@ let game = (function () {
     return form;
 })
 
+console.log(form);
 let player1 = new Player("x",name1);
 let player2 = new Player("o",name2);
 
