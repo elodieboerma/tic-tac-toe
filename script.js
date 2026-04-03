@@ -28,7 +28,9 @@ let Player = function (symbol,name) {
 let game = (function () {
     // takes player names
     const form = document.createElement("form");
-    //form.action = "script.js";
+    const fieldset = document.createElement("fieldset");
+    const caption = document.createElement("legend");
+    fieldset.append(caption);
     // for player 1
     const label1 = document.createElement("label");
     label1.textContent = "Player 1's name (\"x\")";
@@ -41,7 +43,7 @@ let game = (function () {
     player1Name.required = true;
     player1Name.autofocus = true;
     label1.append(player1Name);
-    form.append(label1);
+    fieldset.append(label1);
     // for player 2
     const label2 = document.createElement("label");
     label2.textContent = "Player 2's name (\"o\")";
@@ -53,12 +55,13 @@ let game = (function () {
     player2Name.placeholder = "Player 2";
     player2Name.required = true;
     label2.append(player2Name);
-    form.append(label2);
+    fieldset.append(label2);
     // submit names
     const submitButton = document.createElement("button");
     submitButton.textContent = "OK";
     submitButton.type = "submit";
-    form.append(submitButton);
+    fieldset.append(submitButton);
+    form.append(fieldset);
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
