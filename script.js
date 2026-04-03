@@ -23,8 +23,8 @@ let Player = function (symbol) {
     }
 }
 
-let player1 = new Player("X");
-let player2 = new Player("O");
+let player1 = new Player("x");
+let player2 = new Player("o");
 
 // game object - store flow of the game itself
 //let game = (function () {
@@ -45,17 +45,17 @@ function addMarker(place) {
     let marker;
     // prevents playing spots that are already taken and declares tie/winner when applicable
     if (gameboard[place] == "") {
-        if (whoseTurn = player2) { 
+        if (whoseTurn = `${player2}'s turn`) { 
             marker = player2.marker;
         }else{
-            whoseTurn = player1;
+            whoseTurn = `${player1}'s turn`;
             marker = player1.marker;
         }
         marker.toString();
         gameboard[place] = marker;
         let boxText = document.getElementById("box"+place.toString());
         boxText.textContent = marker;
-        boxText.classList.add(marker.toLowerCase());  // "X" -> "x", "O" -> "o"
+        boxText.classList.add(marker)//.toLowerCase());  // "X" -> "x", "O" -> "o"
         checkForWinner();
         changeWhoseTurn(whoseTurn);
     }else{
