@@ -12,23 +12,25 @@ let gameboard = [
     "","","",
     "","","",
     "","","",
-]; // stores gameboard - "x"s and "o"s
+]; // stores "x"s and "o"s
 
 
 // player object constructor - store players in their own objects
-let Player = function (symbol) {
+let Player = function (symbol,name) {
     // have to return the marker as an object (not just the value) so the rest of the script can use it
     return {
         marker: symbol,
+        name,
     }
 }
 
-let player1 = new Player("x");
-let player2 = new Player("o");
-
 // game object - store flow of the game itself
-//let game = (function () {
-    // adds marker to specific spot in gameboard[] array
+let game = (function () {
+    let player1 = new Player("x",name);
+    let player2 = new Player("o",name);
+
+    displayDom();
+})
 
 function displayDom() {
     let container = document.getElementById("container");
@@ -63,18 +65,6 @@ function addMarker(place) {
     }
 }
 
-function changeWhoseTurn(whoseTurn) {
-    if (whoseTurn == `${player1}'s turn`) {
-            whoseTurnIsIt.textContent = `${player2}'s turn`;
-            marker.classList.add("o");
-            return whoseTurn = `${player2}'s turn`;
-    }else{
-        whoseTurnIsIt.textContent = `${player1}'s turn`;
-        marker.classList.add("x");
-        return whoseTurn = `${player1}'s turn`;
-    }
-}
-
 function checkForWinner() {
     /* winning possibilities */
     let letter;
@@ -105,5 +95,17 @@ function checkForWinner() {
     }else if (player2.marker.toString() == letter) {
         winner = `${player2}`;
         console.log(`Game over! ${winner} won!`);
+    }
+}
+
+function changeWhoseTurn(whoseTurn) {
+    if (whoseTurn == `${player1}'s turn`) {
+            whoseTurnIsIt.textContent = `${player2}'s turn`;
+            marker.classList.add("o");
+            return whoseTurn = `${player2}'s turn`;
+    }else{
+        whoseTurnIsIt.textContent = `${player1}'s turn`;
+        marker.classList.add("x");
+        return whoseTurn = `${player1}'s turn`;
     }
 }
