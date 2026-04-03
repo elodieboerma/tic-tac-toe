@@ -41,13 +41,8 @@ function displayDom() {
 function addMarker(place) {
     //let spot = place - 1;
     let whoseTurnIsIt = document.getElementById("whoseTurnDisplay");
-    let whoseTurn;
-    let marker;// = whoseTurn.marker;
-    /*if (marker == "x") {
-        marker.classList.add("x");
-    }else if (marker == "o") {
-        marker.classList.add("o");
-    }*/
+    let whoseTurn = whoseTurnIsIt.textContent;
+    let marker;
     // prevents playing spots that are already taken and declares tie/winner when applicable
     if (gameboard[place] == "") {
         if (whoseTurn = player2) { 
