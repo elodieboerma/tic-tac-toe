@@ -26,6 +26,8 @@ let Player = function (symbol,name) {
 
 // game object - store flow of the game itself
 let game = (function () {
+
+
     let player1 = new Player("x",name);
     let player2 = new Player("o",name);
 
@@ -33,10 +35,57 @@ let game = (function () {
 })
 
 function displayDom() {
-    let container = document.getElementById("container");
-    container.addEventListener("click", function(e) {
-        const square = e.target;
-        addMarker(square)
+    //const box0 = document.createElement("div");
+    //box0.classList.add("box");
+    //box0.id = "box0";
+    //const container = document.getElementById("container");
+    //container.appendChild(box0);
+    const box0 = document.getElementById("box0");
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+    const box3 = document.getElementById("box3");
+    const box4 = document.getElementById("box4");
+    const box5 = document.getElementById("box5");
+    const box6 = document.getElementById("box6");
+    const box7 = document.getElementById("box7");
+    const box8 = document.getElementById("box8");
+
+    box0.addEventListener("click", function() {
+        let square = box0.id.slice[3];
+        consoloe.log(square);
+        addMarker(square);
+    })
+    box1.addEventListener("click", function() {
+        let square = box1.id.slice[3];
+        addMarker(square);
+    })
+    box2.addEventListener("click", function() {
+        let square = box2.id.slice[3];
+        addMarker(square);
+    })
+    box3.addEventListener("click", function() {
+        let square = box3.id.slice[3];
+        addMarker(square);
+    })
+    box4.addEventListener("click", function() {
+        let square = box4.id.slice[3];
+        addMarker(square);
+    })
+    box5.addEventListener("click", function() {
+        let square = box5.id.slice[3];
+        addMarker(square);
+    })
+    box6.addEventListener("click", function() {
+        let square = box6.id.slice[3];
+        addMarker(square);
+    })
+    box7.addEventListener("click", function() {
+        let square = box7.id.slice[3];
+        addMarker(square);
+    })
+    box8.addEventListener("click", function() {
+        let square = box8.id.slice[3];
+        addMarker(square);
     })
 }
 
