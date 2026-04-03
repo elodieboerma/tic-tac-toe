@@ -39,6 +39,7 @@ let game = (function () {
     player1Name.name = "name1";
     player1Name.placeholder = "Player 1";
     player1Name.required = true;
+    player1Name.autofocus = true;
     label1.append(player1Name);
     form.append(label1);
     // for player 2
