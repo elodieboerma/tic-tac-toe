@@ -44,25 +44,27 @@ let game = (function () {
     player2Name.id = "name2";
     label2.append(player2Name);
     form.append(label2);
-    // submit and assign inputs to "name" variables for player objects
+    // submit names
     const submitButton = document.createElement("button");
     submitButton.textContent = "OK";
     submitButton.type = "button";
     form.append(submitButton);
-
-    let player1 = new Player("x",name1);
-    let player2 = new Player("o",name2);
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
     whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
     document.append(whoseTurnDisplay);
 
-    //gameGrid();
-    respondToDom();
+    return form;
 })
 
-let gameGrid = (function makeGrid() {
+let player1 = new Player("x",name1);
+let player2 = new Player("o",name2);
+
+//gameGrid();
+respondToDom();
+
+let gameGrid = (function () {
     const container = document.createElement("div");
     container.id = "container";
     document.append(container);
