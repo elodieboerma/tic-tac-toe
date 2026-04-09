@@ -28,16 +28,19 @@ function makeNewPlayers() {
     // takes player names
     const form = document.createElement("form");
     const fieldset = document.createElement("fieldset");
-    const caption = document.createElement("legend");
-    fieldset.append(caption);
+    const title = document.createElement("legend");
+    title.textContent = "Enter player names below.";
+    fieldset.append(title);
     // for player 1
     const label1 = document.createElement("label");
-    label1.textContent = "Player 1's name (\"x\")";
+    label1.textContent = "Player 1's name (\"x\"):";
     label1.for = "name1";
+    label1.id = "label1";
     const name1 = document.createElement("input");
     name1.type = "text";
     name1.id = "name1";
     name1.name = "name1";
+    name1.required = true;
     name1.placeholder = "Player 1";
     name1.required = true;
     name1.autofocus = true;
@@ -45,12 +48,14 @@ function makeNewPlayers() {
     fieldset.append(label1);
     // for player 2
     const label2 = document.createElement("label");
-    label2.textContent = "Player 2's name (\"o\")";
+    label2.textContent = "Player 2's name (\"o\"):";
     label2.for = "name2";
+    label2.id = "label2";
     const name2 = document.createElement("input");
     name2.type = "text";
     name2.id = "name2";
     name2.name = "name2";
+    name2.required = true;
     name2.placeholder = "Player 2";
     name2.required = true;
     label2.append(name2);
@@ -59,6 +64,7 @@ function makeNewPlayers() {
     const submitButton = document.createElement("button");
     submitButton.textContent = "OK";
     submitButton.type = "submit";
+    submitButton.id = "submitButton";
     fieldset.append(submitButton);
     form.append(fieldset);
     document.body.appendChild(form);
