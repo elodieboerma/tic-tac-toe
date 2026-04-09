@@ -39,26 +39,26 @@ function makeNewPlayers() {
     const label1 = document.createElement("label");
     label1.textContent = "Player 1's name (\"x\")";
     label1.for = "name1";
-    const player1Name = document.createElement("input");
-    player1Name.type = "text";
-    player1Name.id = "name1";
-    player1Name.name = "name1";
-    player1Name.placeholder = "Player 1";
-    player1Name.required = true;
-    player1Name.autofocus = true;
-    label1.append(player1Name);
+    const name1 = document.createElement("input");
+    name1.type = "text";
+    name1.id = "name1";
+    name1.name = "name1";
+    name1.placeholder = "Player 1";
+    name1.required = true;
+    name1.autofocus = true;
+    label1.append(name1);
     fieldset.append(label1);
     // for player 2
     const label2 = document.createElement("label");
     label2.textContent = "Player 2's name (\"o\")";
     label2.for = "name2";
-    const player2Name = document.createElement("input");
-    player2Name.type = "text";
-    player2Name.id = "name2";
-    player2Name.name = "name2";
-    player2Name.placeholder = "Player 2";
-    player2Name.required = true;
-    label2.append(player2Name);
+    const name2 = document.createElement("input");
+    name2.type = "text";
+    name2.id = "name2";
+    name2.name = "name2";
+    name2.placeholder = "Player 2";
+    name2.required = true;
+    label2.append(name2);
     fieldset.append(label2);
     // submit names
     const submitButton = document.createElement("button");
@@ -72,9 +72,10 @@ function makeNewPlayers() {
     whoseTurnDisplay.id = ("whoseTurnDisplay");
     whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
     document.body.appendChild(whoseTurnDisplay);
+
+    
 }
 
-console.log(form);
 let player1 = new Player("x",name1);
 let player2 = new Player("o",name2);
 
