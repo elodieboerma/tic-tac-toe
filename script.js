@@ -89,52 +89,7 @@ let game = (function () {
 
 }) ();
 
-//gameGrid();
 //respondToDom();
-
-let gameGrid = (function () {
-    const container = document.createElement("div");
-    container.id = "container";
-
-    const box0 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box0";
-    container.appendChild(box0);
-    const box1 = document.createElement("div");
-    box1.classList.add("box");
-    box1.id = "box1";
-    container.appendChild(box1);
-    const box2 = document.createElement("div");
-    box2.classList.add("box");
-    box2.id = "box2";
-    container.appendChild(box2);
-    const box3 = document.createElement("div");
-    box3.classList.add("box");
-    box3.id = "box3";
-    container.appendChild(box3);
-    const box4 = document.createElement("div");
-    box4.classList.add("box");
-    box4.id = "box4";
-    container.appendChild(box4);
-    const box5 = document.createElement("div");
-    box5.classList.add("box");
-    box5.id = "box5";
-    container.appendChild(box5);
-    const box6 = document.createElement("div");
-    box6.classList.add("box");
-    box6.id = "box6";
-    container.appendChild(box6);
-    const box7 = document.createElement("div");
-    box7.classList.add("box");
-    box7.id = "box7";
-    container.appendChild(box7);
-    const box8 = document.createElement("div");
-    box8.classList.add("box");
-    box8.id = "box8";
-    container.appendChild(box8);
-
-    document.body.appendChild(container);
-}) ();
 
 function respondToDom() {
     box0.addEventListener("click", function() {
