@@ -75,16 +75,25 @@ let game = (function () {
     const {name1,name2} = makeNewPlayers();
     const whoseTurn = document.getElementById("whoseTurn");
 
+    let player1;
+    let player2;
+
     const form = document.querySelector("form");
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        let player1 = player("x", name1.value);
-        let player2 = player("o", name2.value);
+        player1 = player("x", name1.value);
+        player2 = player("o", name2.value);
 
         whoseTurn.textContent = `${player1.name}`;
     });
 
+    function getPlayers() {
+        return { player1, player2 };
+    }
+    return {
+        getPlayers
+    };
 }) ();
 
 
@@ -129,29 +138,32 @@ let gridResponse = (function respondToDom() {
 
 
 function addMarker(place) {
-    //let spot = place - 1;
+    let player1 = game.player1;
+    let player2 = game.player2;
+
     let whoseTurn = document.getElementById("whoseTurn");
     whoseTurn = whoseTurn.textContent;
     let marker;
     // prevents playing spots that are already taken and declares tie/winner when applicable
     if (gameboard[place] == "") {
-        if (whoseTurn = `${player2}'s turn`) { 
+        if (whoseTurn.textContent = player2.name) { 
             marker = player2.marker;
         }else{
-            whoseTurn = `${player1}'s turn`;
+            whoseTurn.textContent = player1.name;
             marker = player1.marker;
         }
         marker.toString();
         gameboard[place] = marker;
         let boxText = document.getElementById("box"+place.toString());
         boxText.textContent = marker;
-        boxText.classList.add(marker)//.toLowerCase());  // "X" -> "x", "O" -> "o"
+        boxText.classList.add(marker);//.toLowerCase());  // "X" -> "x", "O" -> "o"
         checkForWinner();
         changeWhoseTurn(whoseTurn);
     }else{
         console.log("Spot taken! Try again!");
     }
 }
+
 
 function checkForWinner() {
     /* winning possibilities */
