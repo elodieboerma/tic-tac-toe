@@ -2,7 +2,7 @@
     // wrap the factory inside an IIFE if only one instance of the function is needed so it can't be reused
 // each little piece of functionality should be able to fit inside the gameboard, player, or game object
 /* "build the house from the inside out" :
-    6) decor - little details to make it look or feel nicer
+    6) decor
         --include a button to start/restart the game
         --add a display element that shows the results when the game ends */
 
@@ -92,6 +92,8 @@ let game = (function () {
         player2 = player("o", name2.value);
 
         whoseTurn.textContent = `${player1.name}`;
+
+        form.remove();
     });
 
     function getPlayers() {
