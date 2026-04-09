@@ -144,19 +144,17 @@ function addMarker(place) {
     let marker;
     // prevents playing spots that are already taken and declares tie/winner when applicable
     if (gameboard[place] == "") {
-        if (whoseTurn.textContent == player2.name) { 
+        if (whoseTurn == player2.name) { 
             marker = player2.marker;
         }else{
-            whoseTurn.textContent = player1.name;
             marker = player1.marker;
         }
-        marker.toString();
         gameboard[place] = marker;
         let boxText = document.getElementById("box"+place.toString());
         boxText.textContent = marker;
         boxText.classList.add(marker);//.toLowerCase());  // "X" -> "x", "O" -> "o"
         checkForWinner();
-        changeWhoseTurn(whoseTurn);
+        changeWhoseTurn();
     }else{
         console.log("Spot taken! Try again!");
     }
@@ -164,6 +162,7 @@ function addMarker(place) {
 
 
 function checkForWinner() {
+    const {player1,player2} = game.getPlayers();
     /* winning possibilities */
     let letter;
     let winner;
@@ -188,22 +187,23 @@ function checkForWinner() {
         }
     }
     if (player1.marker.toString() == letter) {
-        winner = `${player1}`;
-        console.log(`Game over! ${winner} won!`);
+        console.log(`Game over! ${player1.name} won!`);
     }else if (player2.marker.toString() == letter) {
-        winner = `${player2}`;
-        console.log(`Game over! ${winner} won!`);
+        console.log(`Game over! ${player2.name} won!`);
     }
 }
 
-function changeWhoseTurn(whoseTurn) {
-    if (whoseTurn == `${player1}'s turn`) {
-            whoseTurnIsIt.textContent = `${player2}'s turn`;
-            marker.classList.add("o");
-            return whoseTurn = `${player2}'s turn`;
+function changeWhoseTurn() {
+    const {player1,player2} = game.getPlayers();
+    let whoseTurn = document.getElementById("whoseTurn");
+
+    if (whoseTurn == player1.name) {
+            //whoseTurn.textContent = player2.name;
+            //marker.classList.add("o");
+            whoseTurn = player2.name;
     }else{
-        whoseTurnIsIt.textContent = `${player1}'s turn`;
-        marker.classList.add("x");
-        return whoseTurn = `${player1}'s turn`;
+        //whoseTurn = player1.name;
+        //marker.classList.add("x");
+        whoseTurn = player1.name;
     }
 }
