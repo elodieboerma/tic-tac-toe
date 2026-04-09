@@ -79,9 +79,19 @@ let game = (function () {
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
-    whoseTurnDisplay.textContent = `${name1.value}'s turn`;
     document.body.appendChild(whoseTurnDisplay);
-})
+
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        player1 = Player("x", name1.value);
+        player2 = Player("o", name2.value);
+
+        whoseTurnDisplay.textContent = `${name1.value}'s turn`;
+    });
+
+}) ();
 
 //gameGrid();
 respondToDom();
