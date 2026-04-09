@@ -85,7 +85,7 @@ let game = (function () {
         let player1 = player("x", name1.value);
         let player2 = player("o", name2.value);
 
-        whoseTurnDisplay.textContent = `${name1.value}'s turn`;
+        whoseTurnDisplay.textContent = `${player1.name}'s turn`;
     });
 
 }) ();
