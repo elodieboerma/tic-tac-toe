@@ -66,15 +66,16 @@ function makeNewPlayers() {
     return {
         name1,
         name2,
-        whoseTurnDisplay,
     };
 }
+
+
 // game object - store flow of the game itself
 let game = (function () {
-    const newPlayers = makeNewPlayers();
+    const {name1,name2} = makeNewPlayers();
     console.log(newPlayers);
-    let player1 = new Player("x",name1);
-    let player2 = new Player("o",name2);
+    let player1 = new Player("x",name1.value);
+    let player2 = new Player("o",name2.value);
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
