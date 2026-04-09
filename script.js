@@ -89,12 +89,19 @@ let game = (function () {
 
 }) ();
 
-//respondToDom();
 
-function respondToDom() {
+let gridResponse = (function respondToDom() {
+    const box0 = document.getElementById("box0");
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+    const box3 = document.getElementById("box3");
+    const box4 = document.getElementById("box4");
+    const box5 = document.getElementById("box5");
+    const box6 = document.getElementById("box6");
+    const box7 = document.getElementById("box7");
+    const box8 = document.getElementById("box8");
     box0.addEventListener("click", function() {
         let square = box0.id.slice[3];
-        consoloe.log(square);
         addMarker(square);
     })
     box1.addEventListener("click", function() {
@@ -129,7 +136,7 @@ function respondToDom() {
         let square = box8.id.slice[3];
         addMarker(square);
     })
-}
+}) ();
 
 function addMarker(place) {
     //let spot = place - 1;
