@@ -197,13 +197,13 @@ function changeWhoseTurn() {
     const {player1,player2} = game.getPlayers();
     let whoseTurn = document.getElementById("whoseTurn");
 
-    if (whoseTurn == player1.name) {
+    if (whoseTurn.textContent == player1.name) {
             //whoseTurn.textContent = player2.name;
             //marker.classList.add("o");
-            whoseTurn = player2.name;
+            whoseTurn.textContent = player2.name;
     }else{
         //whoseTurn = player1.name;
         //marker.classList.add("x");
-        whoseTurn = player1.name;
+        whoseTurn.textContent = player1.name;
     }
 }
