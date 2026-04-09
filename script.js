@@ -101,40 +101,31 @@ let gridResponse = (function respondToDom() {
     const box7 = document.getElementById("box7");
     const box8 = document.getElementById("box8");
     box0.addEventListener("click", function() {
-        let square = box0.id.slice[3];
-        addMarker(square);
+        addMarker(0);
     })
     box1.addEventListener("click", function() {
-        let square = box1.id.slice[3];
-        addMarker(square);
+        addMarker(1);
     })
     box2.addEventListener("click", function() {
-        let square = box2.id.slice[3];
-        addMarker(square);
+        addMarker(2);
     })
     box3.addEventListener("click", function() {
-        let square = box3.id.slice[3];
-        addMarker(square);
+        addMarker(3);
     })
     box4.addEventListener("click", function() {
-        let square = box4.id.slice[3];
-        addMarker(square);
+        addMarker(4);
     })
     box5.addEventListener("click", function() {
-        let square = box5.id.slice[3];
-        addMarker(square);
+        addMarker(5);
     })
     box6.addEventListener("click", function() {
-        let square = box6.id.slice[3];
-        addMarker(square);
+        addMarker(6);
     })
     box7.addEventListener("click", function() {
-        let square = box7.id.slice[3];
-        addMarker(square);
+        addMarker(7);
     })
     box8.addEventListener("click", function() {
-        let square = box8.id.slice[3];
-        addMarker(square);
+        addMarker(8);
     })
 }) ();
 
