@@ -15,8 +15,8 @@ let gameboard = [
 ]; // stores "x"s and "o"s
 
 
-// player object constructor - store players in their own objects
-let Player = function (symbol,name) {
+// player factory function
+let player = function (symbol,name) {
     // have to return the marker as an object (not just the value) so the rest of the script can use it
     return {
         marker: symbol,
@@ -73,9 +73,6 @@ function makeNewPlayers() {
 // game object - store flow of the game itself
 let game = (function () {
     const {name1,name2} = makeNewPlayers();
-    let player1 = new Player("x",name1.value);
-    let player2 = new Player("o",name2.value);
-    console.log(player1,player2);
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
@@ -85,8 +82,8 @@ let game = (function () {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        player1 = Player("x", name1.value);
-        player2 = Player("o", name2.value);
+        let player1 = player("x", name1.value);
+        let player2 = player("o", name2.value);
 
         whoseTurnDisplay.textContent = `${name1.value}'s turn`;
     });
