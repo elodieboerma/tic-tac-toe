@@ -91,7 +91,7 @@ let game = (function () {
 }) ();
 
 //gameGrid();
-respondToDom();
+//respondToDom();
 
 let gameGrid = (function () {
     const container = document.createElement("div");
@@ -134,7 +134,7 @@ let gameGrid = (function () {
     box0.classList.add("box");
     box0.id = "box8";
     container.appendChild(box8);
-})
+}) ();
 
 function respondToDom() {
     box0.addEventListener("click", function() {
