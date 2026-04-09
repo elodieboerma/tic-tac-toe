@@ -73,7 +73,7 @@ function makeNewPlayers() {
 // game object - store flow of the game itself
 let game = (function () {
     const {name1,name2} = makeNewPlayers();
-    const whoseTurnDisplay = document.getElementById("whoseTurnDisplay");
+    const whoseTurn = document.getElementById("whoseTurn");
 
     const form = document.querySelector("form");
     form.addEventListener("submit", (e) => {
@@ -82,7 +82,7 @@ let game = (function () {
         let player1 = player("x", name1.value);
         let player2 = player("o", name2.value);
 
-        whoseTurnDisplay.textContent = `${player1.name}'s turn`;
+        whoseTurn.textContent = `${player1.name}`;
     });
 
 }) ();
@@ -130,8 +130,8 @@ let gridResponse = (function respondToDom() {
 
 function addMarker(place) {
     //let spot = place - 1;
-    let whoseTurnDisplay = document.getElementById("whoseTurnDisplay");
-    let whoseTurn = whoseTurn.textContent;
+    let whoseTurn = document.getElementById("whoseTurn");
+    whoseTurn = whoseTurn.textContent;
     let marker;
     // prevents playing spots that are already taken and declares tie/winner when applicable
     if (gameboard[place] == "") {
