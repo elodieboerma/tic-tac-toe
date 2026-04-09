@@ -26,6 +26,10 @@ let Player = function (symbol,name) {
 
 // game object - store flow of the game itself
 let game = (function () {
+    // blahblahblah
+})
+
+function makeNewPlayers() {
     // takes player names
     const form = document.createElement("form");
     const fieldset = document.createElement("fieldset");
@@ -68,7 +72,7 @@ let game = (function () {
     whoseTurnDisplay.id = ("whoseTurnDisplay");
     whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
     document.body.appendChild(whoseTurnDisplay);
-})
+}
 
 console.log(form);
 let player1 = new Player("x",name1);
