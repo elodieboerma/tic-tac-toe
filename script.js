@@ -73,7 +73,7 @@ function makeNewPlayers() {
     whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
     document.body.appendChild(whoseTurnDisplay);
 
-    
+    return name1,name2,whoseTurnDisplay
 }
 
 let player1 = new Player("x",name1);
