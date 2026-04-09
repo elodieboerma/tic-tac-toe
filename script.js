@@ -75,7 +75,7 @@ let game = (function () {
     const {name1,name2} = makeNewPlayers();
 
     const whoseTurnDisplay = document.createElement("div");
-    whoseTurnDisplay.id = ("whoseTurnDisplay");
+    whoseTurnDisplay.id = "whoseTurnDisplay";
     document.body.appendChild(whoseTurnDisplay);
 
     const form = document.querySelector("form");
