@@ -73,13 +73,13 @@ function makeNewPlayers() {
 // game object - store flow of the game itself
 let game = (function () {
     const {name1,name2} = makeNewPlayers();
-    console.log(newPlayers);
     let player1 = new Player("x",name1.value);
     let player2 = new Player("o",name2.value);
+    console.log(player1,player2);
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
-    whoseTurnDisplay.textContent = `${name1.toString()}'s turn`;
+    whoseTurnDisplay.textContent = `${name1.value}'s turn`;
     document.body.appendChild(whoseTurnDisplay);
 })
 
