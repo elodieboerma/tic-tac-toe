@@ -1,3 +1,8 @@
+body {
+    display: grid;
+    place-items: center;
+}
+
 form {
     width: 45vw;
     height: 45vh;
