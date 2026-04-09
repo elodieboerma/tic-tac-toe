@@ -138,15 +138,13 @@ let gridResponse = (function respondToDom() {
 
 
 function addMarker(place) {
-    let player1 = game.player1;
-    let player2 = game.player2;
+    const { player1, player2 } = game.getPlayers();
 
     let whoseTurn = document.getElementById("whoseTurn");
-    whoseTurn = whoseTurn.textContent;
     let marker;
     // prevents playing spots that are already taken and declares tie/winner when applicable
     if (gameboard[place] == "") {
-        if (whoseTurn.textContent = player2.name) { 
+        if (whoseTurn.textContent == player2.name) { 
             marker = player2.marker;
         }else{
             whoseTurn.textContent = player1.name;
