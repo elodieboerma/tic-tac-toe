@@ -24,11 +24,6 @@ let Player = function (symbol,name) {
     }
 }
 
-// game object - store flow of the game itself
-let game = (function () {
-    // blahblahblah
-})
-
 function makeNewPlayers() {
     // takes player names
     const form = document.createElement("form");
@@ -68,22 +63,24 @@ function makeNewPlayers() {
     form.append(fieldset);
     document.body.appendChild(form);
 
-    const whoseTurnDisplay = document.createElement("div");
-    whoseTurnDisplay.id = ("whoseTurnDisplay");
-    whoseTurnDisplay.textContent = `${name1.toString()}'s turn`;
-    document.body.appendChild(whoseTurnDisplay);
-
     return {
         name1,
         name2,
         whoseTurnDisplay,
     };
 }
+// game object - store flow of the game itself
+let game = (function () {
+    const newPlayers = makeNewPlayers();
+    console.log(newPlayers);
+    let player1 = new Player("x",name1);
+    let player2 = new Player("o",name2);
 
-const newPlayers = makeNewPlayers();
-console.log(newPlayers);
-let player1 = new Player("x",name1);
-let player2 = new Player("o",name2);
+    const whoseTurnDisplay = document.createElement("div");
+    whoseTurnDisplay.id = ("whoseTurnDisplay");
+    whoseTurnDisplay.textContent = `${name1.toString()}'s turn`;
+    document.body.appendChild(whoseTurnDisplay);
+})
 
 //gameGrid();
 respondToDom();
