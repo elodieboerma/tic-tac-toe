@@ -70,12 +70,18 @@ function makeNewPlayers() {
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
-    whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
+    whoseTurnDisplay.textContent = `${name1.toString()}'s turn`;
     document.body.appendChild(whoseTurnDisplay);
 
-    return name1,name2,whoseTurnDisplay
+    return {
+        name1,
+        name2,
+        whoseTurnDisplay,
+    };
 }
 
+const newPlayers = makeNewPlayers();
+console.log(newPlayers);
 let player1 = new Player("x",name1);
 let player2 = new Player("o",name2);
 
