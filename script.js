@@ -62,13 +62,12 @@ let game = (function () {
     submitButton.type = "submit";
     fieldset.append(submitButton);
     form.append(fieldset);
+    document.body.appendChild(form);
 
     const whoseTurnDisplay = document.createElement("div");
     whoseTurnDisplay.id = ("whoseTurnDisplay");
     whoseTurnDisplay.textContent = `${player1.name.toString()}'s turn`;
-    document.append(whoseTurnDisplay);
-
-    return form;
+    document.body.appendChild(whoseTurnDisplay);
 })
 
 console.log(form);
