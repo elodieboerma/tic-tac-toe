@@ -96,7 +96,6 @@ let game = (function () {
 let gameGrid = (function () {
     const container = document.createElement("div");
     container.id = "container";
-    document.body.appendChild(container);
 
     const box0 = document.createElement("div");
     box0.classList.add("box");
@@ -134,6 +133,8 @@ let gameGrid = (function () {
     box0.classList.add("box");
     box0.id = "box8";
     container.appendChild(box8);
+
+    document.body.appendChild(container);
 }) ();
 
 function respondToDom() {
