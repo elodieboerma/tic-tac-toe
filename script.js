@@ -3,7 +3,6 @@
 // each little piece of functionality should be able to fit inside the gameboard, player, or game object
 /* "build the house from the inside out" :
     6) decor - little details to make it look or feel nicer
-        --let players put in their names
         --include a button to start/restart the game
         --add a display element that shows the results when the game ends */
 
@@ -102,36 +101,36 @@ let gameGrid = (function () {
     box0.id = "box0";
     container.appendChild(box0);
     const box1 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box1";
+    box1.classList.add("box");
+    box1.id = "box1";
     container.appendChild(box1);
     const box2 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box2";
+    box2.classList.add("box");
+    box2.id = "box2";
     container.appendChild(box2);
     const box3 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box3";
+    box3.classList.add("box");
+    box3.id = "box3";
     container.appendChild(box3);
     const box4 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box4";
+    box4.classList.add("box");
+    box4.id = "box4";
     container.appendChild(box4);
     const box5 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box5";
+    box5.classList.add("box");
+    box5.id = "box5";
     container.appendChild(box5);
     const box6 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box6";
+    box6.classList.add("box");
+    box6.id = "box6";
     container.appendChild(box6);
     const box7 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box7";
+    box7.classList.add("box");
+    box7.id = "box7";
     container.appendChild(box7);
     const box8 = document.createElement("div");
-    box0.classList.add("box");
-    box0.id = "box8";
+    box8.classList.add("box");
+    box8.id = "box8";
     container.appendChild(box8);
 
     document.body.appendChild(container);
