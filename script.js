@@ -3,7 +3,6 @@
 // each little piece of functionality should be able to fit inside the gameboard, player, or game object
 /* "build the house from the inside out" :
     6) decor
-        --include a button to start/restart the game
         --add a display element that shows the results when the game ends */
 
 
@@ -80,12 +79,13 @@ function makeNewPlayers() {
 let game = (function () {
     const {name1,name2} = makeNewPlayers();
     const whoseTurn = document.getElementById("whoseTurn");
+    const restartButton = document.getElementById("restartButton");
 
     let player1;
     let player2;
 
     const form = document.querySelector("form");
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", function(e) {
         e.preventDefault();
 
         player1 = player("x", name1.value);
@@ -95,6 +95,10 @@ let game = (function () {
 
         form.remove();
     });
+
+    restartButton.addEventListener("click", function() {
+        location.reload();
+    })
 
     function getPlayers() {
         return { player1, player2 };
