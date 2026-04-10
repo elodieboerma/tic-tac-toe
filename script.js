@@ -1,16 +1,9 @@
-// as little global code as possible - use function factories as much as possible
-    // wrap the factory inside an IIFE if only one instance of the function is needed so it can't be reused
-// each little piece of functionality should be able to fit inside the gameboard, player, or game object
-/* "build the house from the inside out" :
-    6) decor
-        --add a display element that shows the results when the game ends */
-
-
+// stores "x"s and "o"s
 let gameboard = [
     "","","",
     "","","",
     "","","",
-]; // stores "x"s and "o"s
+];
 
 
 // player factory function
