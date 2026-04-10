@@ -71,6 +71,9 @@ function makeNewPlayers() {
 // game object - store flow of the game itself
 let game = (function () {
     const {name1,name2} = makeNewPlayers();
+
+    let turnColored = document.getElementById("color");
+    turnColored.style.color = "white";
     const whoseTurn = document.getElementById("whoseTurn");
     const restartButton = document.getElementById("restartButton");
 
@@ -84,6 +87,7 @@ let game = (function () {
         player1 = player("x", name1.value);
         player2 = player("o", name2.value);
 
+        turnColored.style.color = "black";
         whoseTurn.textContent = `${player1.name}`;
 
         form.remove();
