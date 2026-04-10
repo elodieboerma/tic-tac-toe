@@ -177,6 +177,7 @@ function checkForWinner() {
     }
 }
 
+
 function changeWhoseTurn() {
     const {player1,player2} = game.getPlayers();
     let whoseTurn = document.getElementById("whoseTurn");

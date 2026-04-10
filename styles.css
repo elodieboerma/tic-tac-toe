@@ -1,6 +1,7 @@
 body {
     display: grid;
     place-items: center;
+    margin: 0px;
 }
 
 form {
@@ -35,8 +36,8 @@ form {
 #container {
     display: grid;
     width: 30vw;
-    height: 30vh;
-    grid-template: repeat(3,10vw) / repeat(3,10vh);
+    height: 30vw;
+    grid-template: repeat(3,10vw) / repeat(3,10vw);
 }
 
 .box {
@@ -53,6 +54,10 @@ form {
 
 .o {
     color: blue;
+}
+
+#restartButton {
+    margin: 20px;
 }
 
 #winnerMessage {
