@@ -30,7 +30,8 @@ form {
     margin-left: 10px;
 }
 
-#submitButton {
+#submitButton,
+#restartButton {
     justify-self: center;
     padding: 0.5rem 1.5rem;
 }
