@@ -67,10 +67,11 @@ form {
 #winnerMessage {
     color: red;
     background-color: white;
-    padding: 5px;
+    padding: 2rem 0px;
     text-align: center;
     font-size: 48px;
-    border: black solid 2px;
+    border: black solid 5px;
+    border-radius: 10px;
     width: 50vw;
     position: fixed;
 }
