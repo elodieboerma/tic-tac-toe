@@ -164,7 +164,7 @@ function addMarker(place) {
         gameboard[place] = marker;
         let boxText = document.getElementById("box"+place.toString());
         boxText.textContent = marker;
-        boxText.classList.add(marker);//.toLowerCase());  // "X" -> "x", "O" -> "o"
+        boxText.classList.add(marker);
         checkForWinner();
         changeWhoseTurn();
     }else{
@@ -177,7 +177,6 @@ function checkForWinner() {
     const {player1,player2} = game.getPlayers();
     /* winning possibilities */
     let letter;
-    let winner;
     if (/*horizontal #1*/ (gameboard[0] == gameboard[1] && gameboard[1] == gameboard[2] && gameboard[0] != "") ||
         /*vertical #1*/ (gameboard[0] == gameboard[3] && gameboard[3] == gameboard[6] && gameboard[0] != "") ||
         /*diagonal #1*/ (gameboard[0] == gameboard[4] && gameboard[4] == gameboard[8] && gameboard[0] != "") ){
@@ -195,13 +194,18 @@ function checkForWinner() {
         if (gameboard[0] != "" && gameboard[1] != "" && gameboard[2] != "" &&
             gameboard[3] != "" && gameboard[4] != "" && gameboard[5] != "" &&
             gameboard[6] != "" && gameboard[7] != "" && gameboard[8] != "" ){
-                console.log("Tie!");
+                winnerMessage.textContent = "Tie!";
         }
     }
+
+    let winnerMessage = document.createElement("div");
+    winnerMessage.id = "winnerMessage";
+    document.body.appendChild(winnerMessage);
+
     if (player1.marker.toString() == letter) {
-        console.log(`Game over! ${player1.name} won!`);
+        winnerMessage.textContent = `Game over! ${player1.name} won!`;
     }else if (player2.marker.toString() == letter) {
-        console.log(`Game over! ${player2.name} won!`);
+        winnerMessage.textContent = `Game over! ${player2.name} won!`;
     }
 }
 

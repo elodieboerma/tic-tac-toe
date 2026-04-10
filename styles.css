@@ -53,3 +53,11 @@ form {
 .o {
     color: blue;
 }
+
+#winnerMessage {
+    color: red;
+    background-color: white;
+    font-size: 48px;
+    border: black solid 10px;
+    width: 50vw;
+}
