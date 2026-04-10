@@ -57,7 +57,9 @@ form {
 #winnerMessage {
     color: red;
     background-color: white;
+    padding: 5px;
+    text-align: center;
     font-size: 48px;
-    border: black solid 10px;
+    border: black solid 2px;
     width: 50vw;
 }

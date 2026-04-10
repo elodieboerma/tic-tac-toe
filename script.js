@@ -175,6 +175,10 @@ function addMarker(place) {
 
 function checkForWinner() {
     const {player1,player2} = game.getPlayers();
+
+    let winnerMessage = document.createElement("div");
+    document.body.appendChild(winnerMessage);
+
     /* winning possibilities */
     let letter;
     if (/*horizontal #1*/ (gameboard[0] == gameboard[1] && gameboard[1] == gameboard[2] && gameboard[0] != "") ||
@@ -194,17 +198,16 @@ function checkForWinner() {
         if (gameboard[0] != "" && gameboard[1] != "" && gameboard[2] != "" &&
             gameboard[3] != "" && gameboard[4] != "" && gameboard[5] != "" &&
             gameboard[6] != "" && gameboard[7] != "" && gameboard[8] != "" ){
+                winnerMessage.id = "winnerMessage";
                 winnerMessage.textContent = "Tie!";
         }
     }
 
-    let winnerMessage = document.createElement("div");
-    winnerMessage.id = "winnerMessage";
-    document.body.appendChild(winnerMessage);
-
     if (player1.marker.toString() == letter) {
+        winnerMessage.id = "winnerMessage";
         winnerMessage.textContent = `Game over! ${player1.name} won!`;
     }else if (player2.marker.toString() == letter) {
+        winnerMessage.id = "winnerMessage";
         winnerMessage.textContent = `Game over! ${player2.name} won!`;
     }
 }
