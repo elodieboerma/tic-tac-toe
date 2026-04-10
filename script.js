@@ -19,10 +19,9 @@ let player = function (symbol,name) {
 function makeNewPlayers() {
     // takes player names
     const form = document.createElement("form");
-    const fieldset = document.createElement("fieldset");
-    const title = document.createElement("legend");
+    const title = document.createElement("div");
     title.textContent = "Enter player names below.";
-    fieldset.append(title);
+    form.append(title);
     // for player 1
     const label1 = document.createElement("label");
     label1.textContent = "Player 1's name (\"x\"):";
@@ -37,7 +36,7 @@ function makeNewPlayers() {
     name1.required = true;
     name1.autofocus = true;
     label1.append(name1);
-    fieldset.append(label1);
+    form.append(label1);
     // for player 2
     const label2 = document.createElement("label");
     label2.textContent = "Player 2's name (\"o\"):";
@@ -51,14 +50,13 @@ function makeNewPlayers() {
     name2.placeholder = "Player 2";
     name2.required = true;
     label2.append(name2);
-    fieldset.append(label2);
+    form.append(label2);
     // submit names
     const submitButton = document.createElement("button");
     submitButton.textContent = "OK";
     submitButton.type = "submit";
     submitButton.id = "submitButton";
-    fieldset.append(submitButton);
-    form.append(fieldset);
+    form.append(submitButton);
     document.body.appendChild(form);
 
     return {

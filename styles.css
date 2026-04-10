@@ -6,14 +6,16 @@ body {
 
 form {
     width: 30vw;
-    height: 20vw;
+    height: 14vw;
+    padding: 1rem;
     position: fixed;
     display: grid;
     grid-template-rows: repeat(3,1fr);
     justify-items: center;
     font-size: 16px;
     background-color: white;
-    border: black solid 1px;
+    border: red solid 3px;
+    border-radius: 15px;
 }
 
 #label1,
